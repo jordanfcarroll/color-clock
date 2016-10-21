@@ -64,7 +64,7 @@ function updateAdvancedClock () {
 
 	var timeString = hourString + ":" + minutesString + ":" + secondsString;
 
-	timeString = timeString.split(":")
+	timeString = timeString.split(":");
 	timeString = timeString.map(function (x) {
 		newValue = (+x).toString(16).toUpperCase();
 		if (newValue.length === 1) {
@@ -75,11 +75,11 @@ function updateAdvancedClock () {
 	});
 	timeString = timeString.join("")
 
-	$("#adv-clock").text(timeString);
+	$("#adv-clock").text("#" + timeString);
 	$("body").css("background-color", "#" + timeString);
 }
 
 
 setInterval(updateClock, 1);
-setInterval(updateHexClock, 1);
+// setInterval(updateHexClock, 1);
 setInterval(updateAdvancedClock, 1);
